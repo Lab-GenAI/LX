@@ -190,15 +190,7 @@ nav>ul>li>a>img {
     font-size: 2.4vh;
 }
 
-#mic-btn {
-    background-color: #FEDACC;
-    /* border: 1px solid #b5125e; */
-    border-radius: 4px;
-    width: 2vw;
-    height: 4vh;
-    color: #000000;
-    font-size: 2.4vh;
-}
+
 
 .input-window {
     width: 100%;
@@ -212,18 +204,16 @@ nav>ul>li>a>img {
 }
 
 .input-window-response {
-    width: 100%;
+    width: 90%;
     background-color: #262626;
+    
     border-radius: 5px;
-    height: 35vh;
+    height: 45vh;
     color: white;
     border: 1px solid grey;
 }
 
-[type=radio] {
-    accent-color: #b5125e !important;
 
-}
 
 #submit-loader {
     color: white;
@@ -336,17 +326,18 @@ nav>ul>li>a>img {
     border-radius: 8px;
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     height: 50vh;
-    width: 60vw;
+    width: 66vw;
+    flex-direction: row;
 }
 
 .output-container iframe {
     border: none;
     width: 100%;
     height: 100%;
-    max-width: 500px;
+    /* max-width: 500px; */
     max-height: 400px;
 }
 

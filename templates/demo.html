@@ -58,11 +58,14 @@
                     <button type="button" onclick="callFunctions_demo();" id="submit-btn">Submit</button>
                     <div id="submit-loader" hidden><i class="fa fa-spinner fa-spin loader-icon"></i></div>
                     <button type="submit" onclick="refreshPage();" id="refresh-btn">↻</button>
-                    <button type="button" id="mic-btn" class="form-btn" style="margin: 0px 5px 0 0;"><i class="fa fa-microphone-slash"></i></button>
+                    <!-- <button type="button" id="mic-btn" class="form-btn" style="margin: 0px 5px 0 0;"><i class="fa fa-microphone-slash"></i></button> -->
                 </form>
             </div>
             <div class="output-container">
                 <iframe id="gifFrame" allow="autoplay" frameborder="0"></iframe>
+                <textarea class="input-window-response" rows="6"
+                        placeholder="You will get output of your prompt"
+                        disabled></textarea>
             </div>
         </div>
     </div>
