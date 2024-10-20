@@ -1,0 +1,228 @@
+:root {
+  --heading:2.5vh;
+  --input-font-size:1.2rem;
+  --partial-background:rgba(0, 0, 0, .5);
+  --highlight-color:#FCBC00;
+}
+
+html {
+ height: 100%;
+}
+
+body {
+ margin: 0;
+ padding: 0;
+ font-family: sans-serif;
+ background-color: #141313;
+ background-image: url("./Repeat\ Grid\ 2.png");
+ background-size: contain;
+ background-repeat: no-repeat;
+ overflow: hidden;
+}
+
+
+
+.login-box {
+ position: absolute;
+ top: 55%;
+ left: 50%;
+ width: 24vw;
+ min-width: 400px;
+ height: 43vh;
+ min-height: 260px;
+ padding: 4vh;
+ transform: translate(-50%, -50%);
+ background: var(--partial-background);
+ box-sizing: border-box;
+ box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+ border-radius: 10px;
+ border: 1px solid var(--highlight-color);
+}
+
+.login-box h2 {
+ margin: 0 0 30px;
+ padding: 0;
+ color: #fff;
+ text-align: center;
+ font-size: var(--heading);
+}
+
+.login-box .user-box {
+ position: relative;
+}
+
+.login-box .user-box input {
+ width: 100%;
+ padding: 10px 0;
+ font-size: var(--input-font-size);
+ color: #fff;
+ margin-bottom: 30px;
+ border: none;
+ border-bottom: 1px solid #fff;
+ outline: none;
+ background: transparent;
+}
+
+.login-box .user-box label {
+ position: absolute;
+ top: 0;
+ left: 0;
+ padding: 10px 0;
+ font-size: var(--input-font-size);
+ color: #fff;
+ pointer-events: none;
+ transition: .5s;
+}
+
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
+ top: -20px;
+ left: 0;
+ color: var(--highlight-color);
+ font-size: 12px;
+}
+
+.login-box form a.submit-button {
+ position: relative;
+ display: inline-block;
+ padding: 1vh 1.5vw;
+ color: var(--highlight-color);
+ font-size: var(--input-font-size);
+ text-decoration: none;
+ text-transform: uppercase;
+ overflow: hidden;
+ transition: .5s;
+ margin-top: 4vh;
+ letter-spacing: 4px;
+ border: 1px solid var(--highlight-color);
+ border-radius: 5px;
+}
+
+.login-box form a.submit-button:hover {
+ background: var(--highlight-color);
+ color: #000;
+ border-radius: 5px;
+ box-shadow: 0 0 5px #f3ce5f, 0 0 25px var(--highlight-color), 0 0 50px var(--highlight-color), 0 0 100px #f3ce5f;
+}
+
+.login-box a span {
+ position: absolute;
+ display: block;
+}
+
+.login-box a span:nth-child(1) {
+ top: 0;
+ left: -100%;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(90deg, transparent, var(--highlight-color));
+ animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+ 0% {
+     left: -100%;
+ }
+
+ 50%, 100% {
+     left: 100%;
+ }
+}
+
+.login-box a span:nth-child(2) {
+ top: -100%;
+ right: 0;
+ width: 2px;
+ height: 100%;
+ background: linear-gradient(180deg, transparent, var(--highlight-color));
+ animation: btn-anim2 1s linear infinite;
+ animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+ 0% {
+     top: -100%;
+ }
+
+ 50%, 100% {
+     top: 100%;
+ }
+}
+
+.login-box a span:nth-child(3) {
+ bottom: 0;
+ right: -100%;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(270deg, transparent, var(--highlight-color));
+ animation: btn-anim3 1s linear infinite;
+ animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+ 0% {
+     right: -100%;
+ }
+
+ 50%, 100% {
+     right: 100%;
+ }
+}
+
+.login-box a span:nth-child(4) {
+ bottom: -100%;
+ left: 0;
+ width: 2px;
+ height: 100%;
+ background: linear-gradient(360deg, transparent, var(--highlight-color));
+ animation: btn-anim4 1s linear infinite;
+ animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+ 0% {
+     bottom: -100%;
+ }
+
+ 50%, 100% {
+     bottom: 100%;
+ }
+}
+
+.intro{
+ /* background-color: #252525; */
+ background-color: #141313;
+ display: flex;
+ flex-direction: row;
+ width: 50%;
+ margin: 3vh auto 0 auto;
+ padding: 0.5vh;
+ border-radius: 50px; 
+
+}
+
+#text_container{
+ width: 100%;
+ padding: 2vh;
+ height: 10vh;
+ text-align: center;
+}
+
+#text_container>img{
+ width: 6vw;
+}
+
+#text_container>h1{
+ margin-top: 1vh;
+ font-size: 6vh;
+ margin-bottom: 1vh;
+ font-weight: 500;
+ color:white;
+}
+
+#text_container>h5{
+ margin-top: 0.5vh;
+ margin-bottom: 0.5vh;
+ font-size: 2.5vh;
+ font-weight: 300;
+}

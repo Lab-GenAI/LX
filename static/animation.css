@@ -1,0 +1,77 @@
+.is-hidden {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    background-image: url('../static/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.PageBackToWork {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #b5125e;
+    /* background: black; */
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 5vh;
+
+    &-heading {
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+
+        .PageBackToWork-heading {
+            font-size: 10vh;
+        }
+    }
+
+    &-rotationTextContainer {
+        position: relative;
+    }
+
+    &-rotationText {
+        display: inline-block;
+        position: relative;
+
+        &.is-inactive {
+            position: absolute;
+            right: 0;
+            bottom: 100%;
+        }
+    }
+
+    &-itText {
+        display: inline-block;
+    }
+}
+
+
+.logo-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+.logo {
+    height: 50px;
+    /* Adjust height as needed */
+    width: auto;
+}
+
+.hidden-link {
+    color: inherit; /* Ensures the link has the same color as the surrounding text */
+    text-decoration: none; /* Removes underline */
+    cursor: default; /* Optional: changes the cursor to the default arrow instead of the pointer hand */
+  }
+  
+  .hidden-link:hover, .hidden-link:focus, .hidden-link:active {
+    color: inherit; /* Ensures the color doesn't change on hover or when clicked */
+    text-decoration: none; /* Prevents any underline from appearing */
+  }

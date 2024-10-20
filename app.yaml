@@ -1,0 +1,23 @@
+runtime: python311
+
+entrypoint: gunicorn -b :$PORT main:app
+
+env_variables:
+  project: "57162053595"
+  project_gemini: "oceanic-sky-421210"
+  location: "us-central1"
+  model_code: "projects/57162053595/locations/us-central1/endpoints/1267664339058294784"
+  model_layer: "gemini-1.5-flash-001"
+handlers:
+  # This configures Google App Engine to serve the files in the app's static
+  # directory.
+- url: /static
+  static_dir: static
+
+  # This handler routes all requests not caught above to your main app. It is
+  # required when static routes are defined, but can be omitted (along with
+  # the entire handlers section) when there are no static files defined.
+- url: /.*
+  script: auto
+
+

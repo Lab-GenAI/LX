@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <title>Reasoning Layers playground</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='layer_playground.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font.css') }}">
+    <script src="{{ url_for('static', filename='layer_playground.js') }}"></script>
+    <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='favicon.jpg') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@12.0.6/dist/markdown-it.min.js"></script>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div id="logo_section">
+
+            <p class="company-name"> LX: Language Translator Engine</p>
+        </div>
+
+        <div id="user_initials">Admin</div>
+    </div>
+
+    <div id="sidebar-loader" class="sidebar-loader">
+        <div class="sidebar-content">
+            <div class="loader-circle-9">
+                Loading
+                <span></span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content_area">
+        <div class="sidebar">
+            <nav>
+                <ul>
+                    <li class="nav_item "><a href="{{ url_for('index')}}"><img
+                                src="{{ url_for('static', filename='Outline-v2.png') }}" />Home</a></li>
+                    
+                    <li class="nav_item active"><a href="{{ url_for('layer_playground') }}"><img
+                                src="{{ url_for('static', filename='PwC_Funct_Icons_Platforms_Outline_Black_RGB.png') }}" />
+                            Reasoning Layers playground</a></li>
+                            <li class="nav_item"><a href="{{ url_for('demo') }}"><img
+                                src="{{ url_for('static', filename='PwC_Funct_Icons_Platforms_Outline_Black_RGB.png') }}" />
+                            Demo</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+        <div class="main_content">
+            <div class="input-container">
+                <form>
+                    <p>
+                        <input type="radio" id="input_layer_check" value="Input_Layer_Check" name="check_type"
+                            class="check_type" checked />
+                        <label for="input_layer_check">Lexical Mapping</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="sensitive_input_layer_check" value="Sensitive_Input_Layer"
+                            name="check_type" class="check_type" />
+                        <label for="sensitive_input_layer_check">Context Memory</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="database_layer_check" value="Database_Layer_Check" name="check_type"
+                            class="check_type" />
+                        <label for="database_layer_check">Semantic Search</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="connected_apps_layer_check" value="Connected_Apps_Layer_Check"
+                            name="check_type" class="check_type" />
+                        <label for="connected_apps_layer_check">Fitment and Transformation</label>
+                    </p>
+                    <p>
+                        <textarea class="input-window" rows="6" placeholder="Enter your prompt here..."
+                            onkeypress="handleKeyPress(event);"></textarea>
+                    </p>
+                    <button type="button" onclick="callFunctions();" id="submit-btn">Submit</button>
+                    <div id="submit-loader" hidden><i class="fa fa-spinner fa-spin loader-icon"></i></div>
+                    <button type="submit" onclick="refreshPage();" id="refresh-btn">↻</button>
+                </form>
+                <div class="input-container-1">
+                    <textarea class="input-window-response" rows="6"
+                        placeholder="You will get output of your prompt here after going through the layer you choose...."
+                        disabled></textarea>
+                </div>
+            </div>
+            <div class="output-container">
+                <div id="staticText1" class="output-text1">
+                </div>
+                <div id="staticText" class="output-text">
+                </div>
+                <h3>Try it out!</h3>
+                <h4 id="unsafe-prompt"> *Scenario 1</h4>
+                <div class="output-row" id="first-output-row">
+                    <textarea id="copyableText" class="output-text" readonly></textarea>
+                    <button class="button" onclick="copyOutputText()"><i class="fa fa-clone"></i></button>
+                </div>
+                <!-- <h4 id="safe-prompt"> *Scenario 2</h4> -->
+                <!-- <div class="output-row" id="second-output-row"> -->
+                    <!-- <textarea id="copyableText1" class="output-text" readonly></textarea> -->
+                    <!-- <button class="button" onclick="copyOutputText1()"><i class="fa fa-clone"></i></button> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

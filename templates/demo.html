@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title>Demo</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='demo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font.css') }}">
+    <script src="{{ url_for('static', filename='demo.js') }}"></script>
+    <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='favicon.jpg') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@12.0.6/dist/markdown-it.min.js"></script>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div id="logo_section">
+
+            <p class="company-name"> LX: Language Translator Engine</p>
+        </div>
+
+        <div id="user_initials">Admin</div>
+    </div>
+
+    <div id="sidebar-loader" class="sidebar-loader">
+        <div class="sidebar-content">
+            <div class="loader-circle-9">
+                Loading
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="content_area">
+        <div class="sidebar">
+            <nav>
+                <ul>
+                    <li class="nav_item "><a href="{{ url_for('index')}}"><img
+                                src="{{ url_for('static', filename='Outline-v2.png') }}" />Home</a></li>
+
+                    <li class="nav_item"><a href="{{ url_for('layer_playground') }}"><img
+                                src="{{ url_for('static', filename='PwC_Funct_Icons_Platforms_Outline_Black_RGB.png') }}" />
+                            Reasoning Layer playground</a></li>
+                    <li class="nav_item active"><a href="{{ url_for('demo') }}"><img
+                                src="{{ url_for('static', filename='PwC_Funct_Icons_Platforms_Outline_Black_RGB.png') }}" />
+                            Demo</a></li>
+
+                </ul>
+            </nav>
+
+        </div>
+        <div class="main_content">
+            <div class="input-container">
+                <form>
+                    <p>
+                        <textarea class="input-window" rows="6" placeholder="Enter your prompt here..."
+                            onkeypress="handleKeyPress(event);"></textarea>
+                    </p>
+                    <button type="button" onclick="callFunctions_demo();" id="submit-btn">Submit</button>
+                    <div id="submit-loader" hidden><i class="fa fa-spinner fa-spin loader-icon"></i></div>
+                    <button type="submit" onclick="refreshPage();" id="refresh-btn">↻</button>
+                    <button type="button" id="mic-btn" class="form-btn" style="margin: 0px 5px 0 0;"><i class="fa fa-microphone-slash"></i></button>
+                </form>
+            </div>
+            <div class="output-container">
+                <iframe id="gifFrame" allow="autoplay" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

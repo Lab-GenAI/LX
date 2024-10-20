@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> LX: Language Translator Engine</title>
+  <link rel="stylesheet" href="../static/animation.css">
+  <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='favicon.jpg') }}">
+</head>
+<body>
+  <div class="logo-container">
+    <a href="{{ url_for('index') }}">
+      <!-- <img src="../static/favicon.jpg" alt="Logo" class="logo"> -->
+    </a>
+  </div>
+  <div class="PageBackToWork">
+    <h1 id="hero-rotating-text" class="PageBackToWork-heading">
+      <span class="PageBackToWork-heading-rotationTextContainer">
+        <span data-hero-rotating-text class="PageBackToWork-heading-rotationText"><a href="{{ url_for('index') }}" class="hidden-link">Breaking Barriers</a></span>
+        <span data-hero-rotating-text class="PageBackToWork-heading-rotationText is-hidden is-inactive"><a href="{{ url_for('index') }}" class="hidden-link">Enabling Communications</a></span>
+        <span data-hero-rotating-text class="PageBackToWork-heading-rotationText is-hidden is-inactive"><a href="{{ url_for('index') }}" class="hidden-link">Conversation Beyond Words</a></span>
+      </span>
+      <span id="hero-it-text" class="PageBackToWork-heading-itText">.</span>
+    </h1>
+  </div>
+  <script src="../static/animation.js"></script>
+</body>
+</html>
